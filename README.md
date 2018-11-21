@@ -25,8 +25,23 @@ Deploy batch and streaming data processing pipelines, based on <a href="https://
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Dataflow may create backup copies of your code
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Dataflow serializes element processing per DoFn instance. Code doesnt need to be thread-safe
 <br>
-<br><b>Windowing</b>
+<br><b><a href="https://beam.apache.org/documentation/programming-guide/#windowing">Windowing</a></b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Fixed Time Windows
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Sliding Time Windows
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Per-Session Windows
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Single Global Window
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Calendar-based Windows (not supported by the Beam SDK for Python)
+<br>
+<br><b>Handle Out-of-Order or Late Data</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Resolve with windows, watermarks, or triggers
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Windows (logically divides element groups by time span)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Watermarks (timestamp - Event Time or Processing Time or PubSub Source Generated)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Triggers (Determines when results within window are emitted). 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Event time triggers (default trigger) - operate on event time as indicated by timestamp
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Processing time triggers
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Data-driven triggers - operate by examining data as it arrives in each window
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Composite triggers
 <br>
 <br><b>Fusion Optimization</b>
 <br>Once the JSON form of your pipeline's execution graph has been validated, the Cloud Dataflow service may modify the graph to perform optimizations. Fusing steps prevents the Cloud Dataflow service from needing to materialize every intermediate PCollection in your pipeline, which can be costly in terms of memory and processing overhead.
@@ -44,16 +59,7 @@ Deploy batch and streaming data processing pipelines, based on <a href="https://
 <br><b>Pipeline Shutdown</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Drain - Finish processing buffered jobs before shutting down
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Cancel - Full stop, cancels existing buffered jobs
-<br>
-<br><b>Handle Out-of-Order or Late Data</b>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Resolve with windows, watermarks, or triggers
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Windows (logically divides element groups by time span)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Watermarks (timestamp - Event Time or Processing Time or PubSub Source Generated)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Triggers (Determines when results within window are emitted). 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Event time triggers (default trigger) - operate on event time as indicated by timestamp
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Processing time triggers
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Data-driven triggers - operate by examining data as it arrives in each window
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Composite triggers
+
 <br>
 <br><b>IAM</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Project-level ONLY (all or nothing for dataflow pipelines within a project)
