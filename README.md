@@ -1,16 +1,17 @@
 <h3><a href="https://cloud.google.com/dataflow/docs/">Google DataFlow</a></h3>
-Deploy your batch and streaming data processing pipelines, based on <a href="https://beam.apache.org/">Apache Beam</a>. Create your pipelines using the Apache Beam SDK, and run them on the Cloud Dataflow service.
+Deploy batch and streaming data processing pipelines, based on <a href="https://beam.apache.org/">Apache Beam</a>. Pipelines are created using the Apache Beam SDK and ran on the managed, Cloud Dataflow service.
 <br>
 <br><b>Concepts:</b>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Batch and Real-time Processing
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Both batch and Real-time Processing
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Built on Apache Beam
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;No-ops, serverless
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Auto-scaling
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Automatic Tuning features - Auto-scales to multiple machines and Dynamic Work Rebalancing
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Parallelization and Distribution - Automatically partitions data and distributes worker code
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;<b>Components</b>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;<b>Element:</b> data (single row)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;<b><b>PCollection:</b> Potentially distributed, multi-element data set
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;<b>Transforms:</b> Operations (math, loops, conditionals) in pipeline
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;<b>ParDo:</b> Special type of transform (Extract or Filter out one column of data)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;<b>Element:</b> data (single row)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;<b>PCollection:</b> Potentially distributed, multi-element data set
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;<b>Transforms:</b> Operations (math, loops, conditionals) in pipeline
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;<b>ParDo:</b> Special type of transform (Extract or Filter out one column of data)
 <br>
 <br><b>Regional Endpoints (defaults to us-central1)</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Stores and handles metadata about your Cloud Dataflow job
@@ -31,8 +32,6 @@ Deploy your batch and streaming data processing pipelines, based on <a href="htt
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Windows (logically divides element groups by time span)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Watermarks (timestamp - Event Time or Processing Time or PubSub Source Generated)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Triggers (Determines when results within window are emitted / submitted)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;
 <br>
 <br><b>IAM</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Roles:
