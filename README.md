@@ -7,6 +7,7 @@ Deploy batch and streaming data processing pipelines, based on <a href="https://
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;No-ops, serverless
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Automatic Tuning features - Auto-scales to multiple machines and Dynamic Work Rebalancing
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Parallelization and Distribution - Automatically partitions data and distributes worker code
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;DataflowRunner (cloud deployment) vs. DirectRunner (local)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;<b>Components</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;<b>Element:</b> data (single row)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;<b>PCollection:</b> Potentially distributed, multi-element data set
@@ -27,7 +28,7 @@ Deploy batch and streaming data processing pipelines, based on <a href="https://
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Drain - Finish processing buffered jobs before shutting down
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Cancel - Full stop, cancels existing buffered jobs
 <br>
-<br><Handle Out-of-Order or Late Data</b>
+<br><b><Handle Out-of-Order or Late Data</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Resolve with windows, watermarks, or triggers
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Windows (logically divides element groups by time span)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Watermarks (timestamp - Event Time or Processing Time or PubSub Source Generated)
