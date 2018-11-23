@@ -43,11 +43,12 @@ Deploy batch and streaming data processing pipelines, based on <a href="https://
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Triggers (Determines when results within window are emitted). 
 <br>
 <br><b>Side Inputs</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Useful when you need to reference external data within a Transform (i.e. list of tax rates, external source, etc.)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Side inputs are useful if your ParDo needs to inject additional data when processing each element in PCollection
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Additional inputs to a ParDo transform
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Input that your DoFn can access each time it processes an element in the input PCollection
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;When you specify a side input, you create a view of some other data
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Can be read from within the ParDo transform’s DoFn while procesing each element.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Can also turn PCollection into a VIEW, which is used in another PCollection Transform.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;A VIEW can be either a LIST (PCollection of object) or MAP (PCollection of key:value pairs)
 <br>
 <br><b>Guidelines: When structuring ParDo transforms and creating DoFn</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Dataflow guarantees that every element in your input PCollection is processed by a DoFn instance exactly once
