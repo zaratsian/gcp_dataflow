@@ -47,6 +47,7 @@ Deploy batch and streaming data processing pipelines, based on <a href="https://
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Side inputs are useful if your ParDo needs to inject additional data when processing each element in PCollection
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Additional inputs to a ParDo transform
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Input that your DoFn can access each time it processes an element in the input PCollection
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Use DoFn objects that accept runtime parameters (DoFn is a Beam SDK class that defines a distributed processing function)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Can also turn PCollection into a VIEW, which is used in another PCollection Transform.
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;A VIEW can be either a LIST (PCollection of object) or MAP (PCollection of key:value pairs)
 <br>
@@ -75,7 +76,15 @@ Deploy batch and streaming data processing pipelines, based on <a href="https://
 <br><b>Pipeline Shutdown</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Drain - Finish processing buffered jobs before shutting down
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Cancel - Full stop, cancels existing buffered jobs
-
+<br>
+<br><b>Templates & DataPrep Integration</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Templates - You can use one of the Google-provided templates or create your own.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Templates - DataPrep also creates and executes Dataflow templates when executed
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Templates provide additional benefits compared to traditional Cloud Dataflow deployment:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Pipeline execution does not require you to recompile your code every time.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Execute pipelines without the dev environment and associated dependencies 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Runtime parameters allow you to customize the execution of the pipeline
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;Non-technical users can execute templates (also enables different IAM controls for deployment)
 <br>
 <br><b>IAM</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Project-level ONLY (all or nothing for dataflow pipelines within a project)
